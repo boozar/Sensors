@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         sensorManager.unregisterListener(sensorEventListener, sensorLight);
         StringBuilder sb = new StringBuilder();
         int i  = 0;
-        String str ="";
         for (Sensor sensor : sensors){
             sb.append("name = ").append(sensor.getName())
                     .append(", type = ").append(sensor.getType())
@@ -47,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     .append("\n-------------------------------\n");
             i++;
         }
-        str = sb.toString();
-        textList.setText("Quantity sensors = "+ i +"\n" + str);
+        textList.setText("Quantity sensors = "+ i +"\n" + sb.toString());
     }
     @Override
     protected  void  onPause(){
